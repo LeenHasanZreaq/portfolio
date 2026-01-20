@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />    <meta
+      name="description"
+      content="Portfolio showcasing game development projects, web design, and interactive experiences. Explore my work in Unity, WebGL, and modern web technologies."
+    />
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <title>Yazed's Portfolio - Game Developer & Web Designer</title>
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Link CSS files -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/App.css">
+    <link rel="stylesheet" href="css/Navbar_.css">
+    <link rel="stylesheet" href="css/Portfolio.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" class="App main-div"> <!-- Added App and main-div classes for styling -->
+      <!-- Navbar will be injected here by navbar.js -->
+      <header id="navbar-container"></header> <!-- Changed nav to header for semantic HTML -->
+
+      <!-- Portfolio content will be injected here by portfolio.js -->
+      <main id="portfolio-container"></main>
+    </div>
+
+    <!-- Custom JS files -->
+    <!-- app.js should be loaded last as it initializes the others -->
+    <script src="js/navbar.js" defer></script>
+    <script src="js/portfolio.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>

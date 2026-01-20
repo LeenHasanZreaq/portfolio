@@ -1,0 +1,35 @@
+Project one
+Littleairavos - Game Jam Winner 🏆
+A man searches for dragon eggs and rescues a baby dragon, embarking on a puzzle-filled adventure.
+He raises the dragon to fly and save it mother before it’s too late
+https://muhammad-almadi.itch.io/littleairavos 
+Y0gqHj.png , s+8cKO.png , 0x0KFT.png , dKYJ9D.png
+
+
+Project two
+MOHBA platform 
+A platform focused on education and developing the concept of online learning, aiming to motivate people to stay consistent, improve themselves during challenging times, and compensate for gaps in education. The website is currently under development
+Untitled.jpg , Unktitled.jpg , canvas.png 
+
+Project three
+No laziness ai
+is an intelligent Anti-Procrastination Engine designed to address educational gaps  students by identifying missing core skills through 
+behavior-based diagnostics rather than exams. It links procrastination patterns to specific knowledge gaps and activates learning 
+through small, purpose-driven projects instead of passive study. The system delivers adaptive micro-interventions that rebuild confidence,
+ restore momentum, and guide students back into effective learning.
+
+
+Project four
+CV Project
+A web platform where users can upload their CVs, making it easier for them to find suitable job
+opportunities and for companies to discover highly-rated candidates. The system encourages users to
+improve themselves daily, increasing their visibility and chances for career growth.
+
+
+
+/* Add more projects below following the same format:
+Title of Project
+Subtitle of Project
+Description of the project.
+image_filename.png
+*/

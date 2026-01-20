@@ -1,0 +1,57 @@
+Game Developer & 2D/3D Designer – Game Jam Winner
+Gaza Sky Geeks Game Jam 2025 | Gaza
+June 2025
+-Winner of Best Technical Design at the Gaza Sky Geeks Game Jam.
+-Designed 2D and 3D game assets, levels, and concepts.
+-Strong experience in creating 3D assets and environments using Blender.
+-Completed an intensive 60-hour Blender and 3D design training.
+
+
+Cybersecurity Trainee
+Gaza Sky Geeks & Mercy Corps | Gaza
+June 18 2025 - September 2025
+gsg-certificate.jpeg
+-Completed an intensive 90-hour course titled “Cybersecurity Skill Stack Path Training.”
+-Learned networking fundamentals and general cybersecurity concepts.
+-Participated in a cybersecurity and bug bounty bootcamp with SED.
+-Received hands-on ethical hacking training, including Windows system exploitation by configuring the system as a vulnerable target and applying multiple attack techniques in a controlled environment.
+
+
+Front-End Developer
+Self-Directed Projects | Remote
+Augast 2024 - May 2025
+-Currently working on three independent front-end projects, focusing on responsive, interactive, and user-friendly web interfaces.
+-Develop modular, maintainable components using HTML, CSS, JavaScript, emphasizing performance, accessibility, and scalability.
+-Collaborate with designers to integrate UI/UX concepts into technically robust web applications.
+-Conduct code reviews and implement best practices to ensure high-quality, optimized code.
+
+
+Problem Solving – Intermediate
+Gaza Sky Geeks | Gaza
+2025 - 2026
+-Completed an intensive 60-hour training focused on problem solving across various coding platforms.
+-Participated in a 30-day challenge with the Computer Club at Khadoori University, solving algorithmic and coding problems on Codeforces.
+-Demonstrated strong logical thinking and the ability to devise multiple solutions to problems.
+-Engaged in team-based problem solving, collaborating with groups to tackle complex challenges.
+
+ 
+
+AI & Web Project Developer
+Self-Directed Projects | Remote
+2026
+-Currently participating in an AI competition, developing a fully functional web application integrated with a custom AI tool.
+-Building and training the AI tool to assist students in multiple ways according to the website’s objectives.
+-Applying basic AI concepts and machine learning techniques to create practical solutions for real-world educational applications.
+-Designing the web interface and functionality end-to-end, ensuring seamless integration with the AI system.
+-Continuously improving the AI tool based on feedback and project requirements.
+
+
+/* Add more experiences above this line, following the same format. 
+   Each experience should be separated by a blank line.
+   Format:
+   Job Title
+   Company Name | City, State (or Remote)
+   Month Year - Month Year (or Present)
+   - Responsibility/Achievement 1
+   - Responsibility/Achievement 2 (can have multiple)
+*/
