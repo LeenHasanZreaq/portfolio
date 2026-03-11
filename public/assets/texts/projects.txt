@@ -1,0 +1,48 @@
+Project one
+solitude shadows
+In one of the most mysterious and abandoned houses in the area, strange occurrences have caught the attention of the police department. Neighbors have reported hearing screams, gunshots, and seeing suspicious movements around the house. These unsettling reports have led the police to assign a mission to a lieutenant, tasked with investigating the house and verifying the truth behind these eerie complaints. But what awaits inside is a challenge beyond anything the lieutenant could have anticipated.
+solitude-shadows.jpg , project4.png , solitude-shadows-2.gif
+
+Project two
+Unknown-prototype
+prototype I created, heavily inspired by P.T..
+Unknown-prototype.jpg, Unknown-prototype-8.png , Unknown-prototype-2.png , Unknown-prototype-3.png , Unknown-prototype-6.png
+
+Project three
+Unknown-prototype(webgl)
+prototype I created, heavily inspired by P.T.. (this WebVersion)
+Unknown-prototype.jpg, Unknown-prototype-1.png , Unknown-prototype-2.png , Unknown-prototype-3.png , Unknown-prototype-6.png
+
+Project four
+Dynamic portfolio this web page
+Dynamic web page created with native HTML,Css,JavaScript to create portfolio with ease
+New Project_.jpg
+
+Project five
+Cube Dobe - Game Jam Winner 🏆
+Winner of First Prize & Most Fun Game Award at Gaza Sky Geeks Game Jam 2025! Created in just 48 hours with team 'Nerd Art', Cube Dobe is an innovative local co-op puzzle game where teamwork is everything. Players must work together to solve challenging puzzles and survive as a team. The game emphasizes cooperation, communication, and creative problem-solving. Don't let go of your friend!
+Awarded by Mercy Corps & Gaza Sky Geeks (June 14, 2025)
+cube_dobe_1.png , cube_dobe_2.png , cube_dobe_3.png , cube_dobe_4.png , cube_dobe_5.png
+
+Project six
+il - Slow-Burn Psychological Horror
+"il" is an atmospheric first-person psychological horror game currently in development. This solo-developed project focuses on creating an immersive experience centered around atmosphere, memory, and denial. The game features innovative voice recognition technology where communication is essential - speak to the game, and it will speak back, echoing your voice as part of the gameplay mechanics.
+
+Key Features:
+• Voice Recognition System: Your voice is the key to unraveling the story
+• Event-Based Gameplay: Dynamic system that responds to player actions and interactions
+• Custom Rain Shader: Developed using Unity Shader Graph for enhanced atmospheric effects
+• Intuitive UI: Interactive elements with visual feedback for lights and doors
+• Immersive Environment: Carefully crafted psychological horror experience with attention to detail
+
+The game continuously evolves through community feedback and features regular development updates showcasing technical innovations and gameplay improvements.
+
+Play on itch.io: https://yazed-hasan.itch.io/il-prototype
+il-prototype-1.jpg , il-prototype-2.jpg , il-prototype-3.jpg
+
+/* Add more projects below following the same format:
+Title of Project
+Subtitle of Project
+Description of the project.
+image_filename.png
+*/

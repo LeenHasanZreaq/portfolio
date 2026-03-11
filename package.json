@@ -1,0 +1,31 @@
+{
+  "name": "portfolio-vanilla-js",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A portfolio website built with HTML, CSS, and vanilla JavaScript.",
+  "scripts": {
+    "start": "echo \"Open public/index.html in your browser to start.\" && exit 0",
+    "build": "echo \"No build step required for vanilla JS project.\" && exit 0",
+    "test": "echo \"No test script configured.\" && exit 0"
+  },
+  "keywords": [
+    "portfolio",
+    "vanilla-js",
+    "html",
+    "css"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
