@@ -1,4 +1,4 @@
-Project one
+Project One
 Littleairavos - Game Jam Winner 🏆
 A man searches for dragon eggs and rescues a baby dragon, embarking on a puzzle-filled adventure.
 He raises the dragon to fly and save it mother before it’s too late
@@ -6,12 +6,8 @@ https://muhammad-almadi.itch.io/littleairavos
 Y0gqHj.png , s+8cKO.png , 0x0KFT.png , dKYJ9D.png
 
 
-Project two
-MOHBA platform 
-A platform focused on education and developing the concept of online learning, aiming to motivate people to stay consistent, improve themselves during challenging times, and compensate for gaps in education. The website is currently under development
-Untitled.jpg , Unktitled.jpg , canvas.png 
 
-Project three
+Project Two
 No laziness ai
 is an intelligent Anti-Procrastination Engine designed to address educational gaps  students by identifying missing core skills through 
 behavior-based diagnostics rather than exams. It links procrastination patterns to specific knowledge gaps and activates learning 
@@ -19,26 +15,33 @@ through small, purpose-driven projects instead of passive study. The system deli
 restore momentum, and guide students back into effective learning .
 Screenshot From 2026-03-10 20-18-53.png , Screenshot From 2026-03-10 20-18-36.png
 
-Project four
+Project Three
 Tasbeh App
 The application is a digital tasbeeh that helps people remember and 
 praise Allah using their phones. Every time a user completes 99 recitations,
 they earn one point that is added to the leaderboard 
+msbha1.jpg , msbha2.jpg , masbaha.png
 
-Project five
+Project four
 CV Project
 A web platform where users can upload their CVs, making it easier for them to find suitable job
 opportunities and for companies to discover highly-rated candidates. The system encourages users to
 improve themselves daily, increasing their visibility and chances for career growth.
+cvproject.png
 
-Project six
+Project Five
 Falafel project
 A Falafel Restaurant Ordering System project aimed at simplifying and organizing the ordering process in small restaurants.
 The idea of the application is to help staff manage orders in a faster and more organized way. Customer orders are registered in the system, and staff receive notifications that include the order details and the total amount, which helps reduce errors and speed up the service.
 The system supports a menu that includes several items such as falafel, hummus, foul, kebda, and musabaha, allowing orders to be recorded and processed easily.
 The application also includes a timing system for managing orders, which helps small restaurants organize the preparation time and track how long each order takes, improving service speed and workflow inside the restaurant.
 
-
+Project Six
+Calculator project
+This project is a simple yet functional Calculator Application built using Java and Spring Boot. 
+The system provides basic arithmetic operations such as addition, subtraction, multiplication, and division through 
+a RESTful API
+calculater.png
 
 /* Add more projects below following the same format:
 Title of Project

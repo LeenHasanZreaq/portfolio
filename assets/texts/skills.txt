@@ -13,11 +13,19 @@ Responsive Design
 Problem Solving
 AI & Web Projects
 Cybersecurity
-Linux User
+Spring boot
 Blender
 Unreal engine
 GODOT engine
 Figma 
 ADOBE PHOTOSHOP
 ADOBE ILLUSTRATOR
-Linux(i use arch btw)
+Linux User(i use arch btw)
+MySQL
+Nmap
+Burp Suite
+Wireshark
+CTF
+postman
+bug bounty
+GhostTrack
