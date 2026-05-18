@@ -30,7 +30,7 @@ Augast 2024 - May 2025
 
 Back-End Developer
 Self-Directed Projects | Remote
-January 2026 - March 2026
+March 2025 - March 2026
 -Currently, I am working on developing an ordering website for a local shop, where I am responsible for the backend development using Spring Boot.
 -I worked on a website for a digital Tasbeeh application using Spring Boot.
 -I worked on a website to reduce procrastination, handling both the frontend and backend development.
