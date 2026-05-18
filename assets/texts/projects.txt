@@ -41,7 +41,7 @@ Calculator project
 This project is a simple yet functional Calculator Application built using Java and Spring Boot. 
 The system provides basic arithmetic operations such as addition, subtraction, multiplication, and division through 
 a RESTful API
-
+calc.png
 /* Add more projects below following the same format:
 Title of Project
 Subtitle of Project
