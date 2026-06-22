@@ -25,9 +25,11 @@ msbha1.jpg , msbha2.jpg
 Project four
 CV Project
 I work on it until now .. 
-A web platform where users can upload their CVs, making it easier for them to find suitable job
-opportunities and for companies to discover highly-rated candidates. The system encourages users to
-improve themselves daily, increasing their visibility and chances for career growth.
+A web platform where users can upload their CVs,
+ making it easier for them to find suitable job opportunities and for companies to discover highly qualified candidates.
+  The system encourages users to improve themselves daily, increasing their visibility and chances for career growth. 
+  It also places strong emphasis on enhanced security measures to protect user data, ensuring that personal information 
+  and CVs are safely stored and handled with high levels of privacy and protection.
 cvproject.png
 
 Project Five
