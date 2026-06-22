@@ -20,10 +20,11 @@ Tasbeh App
 The application is a digital tasbeeh that helps people remember and 
 praise Allah using their phones. Every time a user completes 99 recitations,
 they earn one point that is added to the leaderboard 
-msbha1.jpg , msbha2.jpg , masbaha.png
+msbha1.jpg , msbha2.jpg 
 
 Project four
 CV Project
+I work on it until now .. 
 A web platform where users can upload their CVs, making it easier for them to find suitable job
 opportunities and for companies to discover highly-rated candidates. The system encourages users to
 improve themselves daily, increasing their visibility and chances for career growth.
@@ -31,6 +32,7 @@ cvproject.png
 
 Project Five
 Falafel project
+I work on it freelance I do not have permission to display it .
 A Falafel Restaurant Ordering System project aimed at simplifying and organizing the ordering process in small restaurants.
 The idea of the application is to help staff manage orders in a faster and more organized way. Customer orders are registered in the system, and staff receive notifications that include the order details and the total amount, which helps reduce errors and speed up the service.
 The system supports a menu that includes several items such as falafel, hummus, foul, kebda, and musabaha, allowing orders to be recorded and processed easily.
