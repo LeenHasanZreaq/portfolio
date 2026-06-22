@@ -29,3 +29,4 @@ CTF
 postman
 bug bounty
 GhostTrack
+supabase
