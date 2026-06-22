@@ -31,10 +31,14 @@ Augast 2024 - May 2025
 Back-End Developer
 Self-Directed Projects | Remote
 March 2025 - March 2026
--Currently, I am working on developing an ordering website for a local shop, where I am responsible for the backend development using Spring Boot.
--I worked on a website for a digital Tasbeeh application using Spring Boot.
--I worked on a website to reduce procrastination, handling both the frontend and backend development.
--I worked on a To-Do List application using Spring Boot.
+-Developed multiple backend systems using Java Spring Boot following RESTful API architecture.
+-Built an e-commerce backend system for a hoodie clothing store, including product management, users, shopping cart, orders, and reviews.
+-Designed and implemented a CV/job-matching platform backend that allows users to upload CVs and helps companies find suitable candidates, with focus on improving user engagement and profile visibility.
+-Created a restaurant ordering system backend (Falafel shop) where orders are processed in real-time and sent to staff notifications.
+-Implemented secure authentication and authorization systems using role-based access control (RBAC) and security best practices.
+-Worked with MariaDB database design, including relational modeling, normalization, and efficient query handling.
+-Developed and tested CRUD operations across multiple modules with clean layered architecture (Controller, Service, Repository).
+-Improved system security by applying basic cybersecurity principles (input validation, secure endpoints, and awareness of common vulnerabilities).
 
 
 Problem Solving – Intermediate
