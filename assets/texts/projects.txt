@@ -37,12 +37,13 @@ The system supports a menu that includes several items such as falafel, hummus, 
 The application also includes a timing system for managing orders, which helps small restaurants organize the preparation time and track how long each order takes, improving service speed and workflow inside the restaurant.
 
 Project Six
-Calculator project
-This project is a simple yet functional Calculator Application built using Java and Spring Boot. 
-The system provides basic arithmetic operations such as addition, subtraction, multiplication, and division through 
-a RESTful API
-calc.png
-
+LAHN Hoodies Brand 
+LAHN is a clothing brand specialized in designing and producing modern hoodies that combine comfort, quality, 
+and a unique style. The brand aims to provide clothing pieces that express personality and 
+individuality through modern designs and high-quality materials suitable for everyday use. 
+LAHN focuses on creating a different fashion experience by offering hoodies that mix simplicity, 
+style, and the brand’s own identity.
+clothe1.png , clothe2.png ,clothe3.png ,clothe4.png ,clothe5.png 
 /* Add more projects below following the same format:
 Title of Project
 Subtitle of Project
