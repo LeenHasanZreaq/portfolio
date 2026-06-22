@@ -16,8 +16,8 @@ async function fetchText(url) {
 function linkifyText(text) {
     // Regular expression to match URLs
     const urlRegex = /(https?:\/\/[^\s<]+[^<.,:;"'\)\]\s])/g;
-    
-    return text.replace(urlRegex, function(url) {
+
+    return text.replace(urlRegex, function (url) {
         return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="project-link">${url}</a>`;
     });
 }
@@ -50,43 +50,43 @@ function renderPortfolio() {
     const heroSection = document.createElement('section');
     heroSection.className = 'hero-section';
     heroSection.id = 'home';
-    
+
     const heroContent = document.createElement('div');
     heroContent.className = 'hero-content';
-    
+
     const heroTitle = document.createElement('h1');
     heroTitle.className = 'hero-title';
     heroTitle.textContent = 'Welcome to My Portfolio';
-    
+
     const heroSubtitle = document.createElement('h2');
     heroSubtitle.className = 'hero-subtitle';
-    heroSubtitle.textContent = 'Software Engineer';
-    
+    heroSubtitle.textContent = 'BACKEND DEVELOPER && CYBER SECURITY ';
+
     const heroDescription = document.createElement('p');
     heroDescription.className = 'hero-description';
     heroDescription.textContent = 'Creating immersive experiences and innovative solutions through code and creativity.';
-    
+
     const heroCTA = document.createElement('div');
     heroCTA.className = 'hero-cta';
-    
+
     const viewWorkButton = document.createElement('a');
     viewWorkButton.className = 'hero-button primary';
     viewWorkButton.href = '#projects';
     viewWorkButton.textContent = 'View My Work';
-    
+
     const contactButton = document.createElement('a');
     contactButton.className = 'hero-button secondary';
     contactButton.href = '#contact';
     contactButton.textContent = 'Get In Touch';
-    
+
     heroCTA.appendChild(viewWorkButton);
     heroCTA.appendChild(contactButton);
-    
+
     heroContent.appendChild(heroTitle);
     heroContent.appendChild(heroSubtitle);
     heroContent.appendChild(heroDescription);
     heroContent.appendChild(heroCTA);
-    
+
     heroSection.appendChild(heroContent);
     portfolioContainer.appendChild(heroSection);
 
@@ -119,7 +119,7 @@ function renderOtherSections(portfolioContainer) {
         // Replace newlines in the text file with <br> for HTML rendering,
         // or split into multiple paragraphs if that's the structure.
         // Current texts.txt seems to be a single block of text.
-        p.innerHTML = text.trim().replace(/\r?\n/g, '<br>'); 
+        p.innerHTML = text.trim().replace(/\r?\n/g, '<br>');
         aboutMeContent.appendChild(p);
     }).catch(error => { // Added catch block for robustness
         console.error("Failed to load about me text:", error);
@@ -143,7 +143,7 @@ function renderOtherSections(portfolioContainer) {
     projectsContent.className = 'projects-content';
     fetchText('assets/texts/projects.txt').then(text => {
         console.log("[DEBUG] Fetched projects.txt content:\n" + text); // Log raw content
-        
+
         const projectEntries = text.split(/\r?\n\r?\n/).filter(entry => {
             const trimmedEntry = entry.trim();
             return trimmedEntry !== '' && !trimmedEntry.startsWith('/*');
@@ -156,7 +156,7 @@ function renderOtherSections(portfolioContainer) {
 
         projectEntries.forEach((projectData, index) => {
             // console.log(`[DEBUG] Processing projectData ${index + 1}:\n${projectData}`); // Log each project block
-            
+
             // Split projectData into lines, but stop if a line starts with '/*'
             const linesFromEntry = projectData.split(/\r?\n/);
             const effectiveContentLines = [];
@@ -166,11 +166,11 @@ function renderOtherSections(portfolioContainer) {
                 }
                 effectiveContentLines.push(line);
             }
-            
+
             // Now, map and filter these effective lines to get clean project lines
             const projectLines = effectiveContentLines.map(line => line.trim()).filter(line => line !== '');
             // console.log(`[DEBUG] Parsed projectLines for project ${index + 1}:`, projectLines); // Log lines for this project
-            
+
             if (projectLines.length < 3) { // Need at least Title, Description, Image
                 console.warn(`[DEBUG] Project entry ${index + 1} (Data after filtering comments and empty lines: "${projectLines.join(' | ')}") is incomplete. Expected at least 3 lines (Title, Description, Image), got ${projectLines.length}. Original data block was:\n${projectData}`);
                 return;
@@ -180,7 +180,7 @@ function renderOtherSections(portfolioContainer) {
             // The last line is now a comma-separated string of image filenames
             const imageNamesString = projectLines[projectLines.length - 1];
             const imageFilenames = imageNamesString.split(',').map(name => name.trim()).filter(name => name !== '');
-            
+
             let subtitle = '';
             let descriptionLines = [];
 
@@ -193,9 +193,9 @@ function renderOtherSections(portfolioContainer) {
                 subtitle = projectLines[1];
                 descriptionLines = projectLines.slice(2, projectLines.length - 1);
             }
-            const description = descriptionLines.join('\n');            const projectItem = document.createElement('div');
+            const description = descriptionLines.join('\n'); const projectItem = document.createElement('div');
             projectItem.className = 'project-item';
-            
+
             console.log('Creating project item for:', title); // Keep debug log
 
             const h3 = document.createElement('h3');
@@ -210,7 +210,7 @@ function renderOtherSections(portfolioContainer) {
 
             const p = document.createElement('p');
             // Convert newlines to spaces for the card display and prepare for truncation
-            const cardDescriptionText = description.replace(/\n/g, ' '); 
+            const cardDescriptionText = description.replace(/\n/g, ' ');
             const maxCardDescriptionLength = 100; // Max characters for description on the card
 
             if (cardDescriptionText.length > maxCardDescriptionLength) {
@@ -228,7 +228,7 @@ function renderOtherSections(portfolioContainer) {
 
             // For the project card, we'll display the first image if available
             // The modal will receive all image filenames.
-            let firstImageSrcForCard = null; 
+            let firstImageSrcForCard = null;
             const allImageSourcesForModal = [];
             let imageElement = null; // Declare imageElement here to ensure it's in scope
 
@@ -246,16 +246,17 @@ function renderOtherSections(portfolioContainer) {
                 imageElement.className = 'project-image';
                 imageElement.loading = 'lazy';
                 imageElement.decoding = 'async';
-                imageElement.onerror = function() {
+                imageElement.onerror = function () {
                     console.error(`Failed to load primary image for card: ${imageElement.src}.`);
                 };
-                
+
                 // Add click event listener for image modal (for the first image on the card)
-                imageElement.addEventListener('click', function(event) {
-                    event.stopPropagation(); 
+                imageElement.addEventListener('click', function (event) {
+                    event.stopPropagation();
                     createImageModal(this.src, this.alt);
                 });
-                projectItem.appendChild(imageElement);            } else {
+                projectItem.appendChild(imageElement);
+            } else {
                 const pNoImage = document.createElement('p');
                 pNoImage.textContent = 'No images specified for this project.';
                 projectItem.appendChild(pNoImage);
@@ -271,7 +272,7 @@ function renderOtherSections(portfolioContainer) {
                 console.log('Opening project detail modal for:', title); // Debug log
                 createProjectDetailModal(title, subtitle, description, allImageSourcesForModal, title);
             });
-            
+
             console.log('Added click listener to project:', title); // Debug log
 
             projectsContent.appendChild(projectItem);
@@ -299,7 +300,7 @@ function renderOtherSections(portfolioContainer) {
 
         experienceEntries.forEach(entryData => {
             const lines = entryData.split(/\r?\n/).map(line => line.trim()).filter(line => line !== '' && !line.startsWith('//'));
-            
+
             if (lines.length < 3) { // Title, Company | Location, Date are minimum
                 return; // Silently skip incomplete entries
             }
@@ -323,40 +324,40 @@ function renderOtherSections(portfolioContainer) {
             // Check for certificate/image on line 3 before responsibilities
             let certificateImage = null;
             let startIndex = 3;
-            
+
             if (lines.length > 3 && !lines[3].startsWith('-')) {
                 // This might be a certificate image
                 const potentialImage = lines[3];
                 if (potentialImage.match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
                     certificateImage = potentialImage;
                     startIndex = 4; // Skip the image line when processing responsibilities
-                    
+
                     // Create certificate thumbnail
                     const certContainer = document.createElement('div');
                     certContainer.className = 'certificate-container';
-                    
+
                     const certImg = document.createElement('img');
                     certImg.src = `assets/images/${certificateImage}`;
                     certImg.alt = `Certificate for ${lines[0]}`;
                     certImg.className = 'certificate-thumbnail';
                     certImg.loading = 'lazy';
                     certImg.decoding = 'async';
-                    
-                    certImg.onerror = function() {
+
+                    certImg.onerror = function () {
                         console.error(`Failed to load certificate: ${certImg.src}`);
                         certContainer.style.display = 'none';
                     };
-                    
+
                     // Make certificate clickable to open in modal
-                    certImg.addEventListener('click', function(event) {
+                    certImg.addEventListener('click', function (event) {
                         event.stopPropagation();
                         createImageModal(this.src, this.alt);
                     });
-                    
+
                     const certLabel = document.createElement('span');
                     certLabel.className = 'certificate-label';
                     certLabel.innerHTML = '<i class="fas fa-certificate"></i> View Certificate';
-                    
+
                     certContainer.appendChild(certImg);
                     certContainer.appendChild(certLabel);
                     experienceItem.appendChild(certContainer);
@@ -366,22 +367,22 @@ function renderOtherSections(portfolioContainer) {
             if (lines.length > startIndex) {
                 const responsibilitiesList = document.createElement('ul');
                 for (let i = startIndex; i < lines.length; i++) {
-                    const line = lines[i]; 
+                    const line = lines[i];
                     if (line.startsWith('-')) {
                         const currentLi = document.createElement('li');
-                        let textForLi = line.substring(1).trim(); 
+                        let textForLi = line.substring(1).trim();
 
                         let j = i + 1;
                         while (j < lines.length && !lines[j].startsWith('-')) {
-                            const continuationLine = lines[j].trim(); 
-                            if (continuationLine) { 
+                            const continuationLine = lines[j].trim();
+                            if (continuationLine) {
                                 textForLi += '<br>' + continuationLine;
                             }
                             j++;
                         }
-                        currentLi.innerHTML = textForLi; 
+                        currentLi.innerHTML = textForLi;
                         responsibilitiesList.appendChild(currentLi);
-                        i = j - 1; 
+                        i = j - 1;
                     }
                 }
                 experienceItem.appendChild(responsibilitiesList);
@@ -399,7 +400,7 @@ function renderOtherSections(portfolioContainer) {
     portfolioContainer.appendChild(experienceSection); // Add before Skills
 
 
-      // --- Images Section (Gallery) ---
+    // --- Images Section (Gallery) ---
     const imagesSection = document.createElement('section');
     imagesSection.className = 'images-section';
     imagesSection.id = 'gallery';
@@ -418,7 +419,7 @@ function renderOtherSections(portfolioContainer) {
 
     // Add a button to open the full gallery modal
     const openGalleryButton = document.createElement('button');
-    openGalleryButton.className = 'open-gallery-button btn btn-primary'; 
+    openGalleryButton.className = 'open-gallery-button btn btn-primary';
     openGalleryButton.textContent = 'View Full Gallery';
     openGalleryButton.onclick = () => createFullGalleryModal();
     // Button will be appended after images or if no images, see below
@@ -429,7 +430,7 @@ function renderOtherSections(portfolioContainer) {
     previewThumbnailsContainer.appendChild(galleryLoadingIndicator); // Show loading in the thumbnails area
 
     let allImageFilenames = [];
-    
+
     fetchText('assets/texts/gallery.txt').then(text => {
         galleryLoadingIndicator.remove();
         allImageFilenames = text.split(/\r?\n/).map(name => name.trim()).filter(name => name !== '' && !name.startsWith('#'));
@@ -447,12 +448,12 @@ function renderOtherSections(portfolioContainer) {
                 img.className = 'portfolio-image gallery-image';
                 img.loading = 'lazy';
                 img.decoding = 'async';
-                img.onerror = function() {
+                img.onerror = function () {
                     console.error(`Failed to load gallery preview image: ${img.src}.`);
                     imgContainer.innerHTML = `<p class="gallery-image-error">Error loading ${filename}</p>`;
                 };
 
-                img.addEventListener('click', function() {
+                img.addEventListener('click', function () {
                     const allGalleryImages = allImageFilenames.map(fn => `assets/images/${fn}`);
                     const imgIndex = allGalleryImages.indexOf(this.src);
                     createImageModal(this.src, this.alt, allGalleryImages, imgIndex >= 0 ? imgIndex : index);
@@ -469,18 +470,18 @@ function renderOtherSections(portfolioContainer) {
             const pNoPreviews = document.createElement('p');
             pNoPreviews.textContent = 'Click "View Full Gallery" to see all images.';
             pNoPreviews.style.textAlign = 'center';
-            previewThumbnailsContainer.appendChild(pNoPreviews); 
+            previewThumbnailsContainer.appendChild(pNoPreviews);
         } else {
             const pNoImages = document.createElement('p');
             pNoImages.textContent = 'No images in the gallery yet. Add images to assets/texts/gallery.txt.';
             pNoImages.style.textAlign = 'center';
             previewThumbnailsContainer.appendChild(pNoImages);
             // Optionally hide or disable the button if there are truly no images
-            openGalleryButton.style.display = 'none'; 
+            openGalleryButton.style.display = 'none';
         }
         // Ensure button is appended if not already (e.g. if previewImageFilenames was empty but allImageFilenames was not)
         if (!imagesPreviewContent.contains(openGalleryButton) && allImageFilenames.length > 0) {
-             imagesPreviewContent.appendChild(openGalleryButton);
+            imagesPreviewContent.appendChild(openGalleryButton);
         }
 
     }).catch(error => {
@@ -520,7 +521,7 @@ function renderOtherSections(portfolioContainer) {
                 const parts = trimmedLine.split(':', 2);
                 const categoryName = parts[0].trim();
                 const subSkillsString = parts[1].trim();
-                
+
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'skill-category';
 
@@ -531,7 +532,7 @@ function renderOtherSections(portfolioContainer) {
 
                 const subSkillsUl = document.createElement('ul');
                 subSkillsUl.className = 'skill-list skill-subcategory-list';
-                
+
                 subSkillsString.split(',').forEach(subSkill => {
                     const subSkillTrimmed = subSkill.trim();
                     if (subSkillTrimmed) {
@@ -575,7 +576,7 @@ function renderOtherSections(portfolioContainer) {
     skillsSection.appendChild(skillsContentContainer);
     portfolioContainer.appendChild(skillsSection);
 
-  
+
 
     // --- Contact Section ---
     const contactSection = document.createElement('section');
@@ -593,7 +594,7 @@ function renderOtherSections(portfolioContainer) {
         linkedin: 'fab fa-linkedin',
         github: 'fab fa-github',
         phone: 'fas fa-phone',
-        itchio: 'fab fa-itch-io', 
+        itchio: 'fab fa-itch-io',
         website: 'fas fa-globe',
         twitter: 'fab fa-twitter',
         instagram: 'fab fa-instagram',
@@ -618,24 +619,24 @@ function renderOtherSections(portfolioContainer) {
 
             if (line.includes(':')) {
                 const parts = line.split(': ');
-                contactType = parts[0].toLowerCase().replace(/[^a-z0-9]/gi, ''); 
+                contactType = parts[0].toLowerCase().replace(/[^a-z0-9]/gi, '');
                 const value = parts.slice(1).join(': ');
                 linkTextContent = value;
 
                 iconSpan.innerHTML = `<i class="${iconMap[contactType] || defaultIcon}"></i>`;
 
                 if (contactType === 'email') {
-                    url = `mailto:${value}`; 
+                    url = `mailto:${value}`;
                     isLink = true;
                 } else if (contactType === 'phone') {
-                    url = `tel:${value.replace(/\s+/g, '')}`; 
+                    url = `tel:${value.replace(/\s+/g, '')}`;
                     isLink = true;
                 } else if (value.startsWith('http') || value.startsWith('www')) {
                     url = value.startsWith('http') ? value : `https://${value}`;
                     isLink = true;
                 } else {
-                    linkTextContent = line; 
-                    isLink = false; 
+                    linkTextContent = line;
+                    isLink = false;
                 }
             } else {
                 iconSpan.innerHTML = `<i class="${defaultIcon}"></i>`;
@@ -689,7 +690,7 @@ function createImageModal(src, alt, galleryImages = null, currentIndex = 0) {
     let startX = 0;
     let startY = 0;
     let currentImageIndex = currentIndex;
-    
+
     // Touch handling for swipe gestures
     let touchStartX = 0;
     let touchStartY = 0;
@@ -721,7 +722,7 @@ function createImageModal(src, alt, galleryImages = null, currentIndex = 0) {
             zoomButtons.forEach(btn => btn.classList.remove('visible'));
         }
     }
-    
+
     function updateImageCounter() {
         if (galleryImages && galleryImages.length > 1) {
             const counter = modalOverlay.querySelector('.image-counter');
@@ -730,24 +731,24 @@ function createImageModal(src, alt, galleryImages = null, currentIndex = 0) {
             }
         }
     }
-    
+
     function updateNavigationButtons() {
         if (!galleryImages || galleryImages.length <= 1) return;
-        
+
         const prevBtn = modalOverlay.querySelector('.gallery-nav-prev');
         const nextBtn = modalOverlay.querySelector('.gallery-nav-next');
-        
+
         if (prevBtn) prevBtn.style.display = currentImageIndex > 0 ? 'flex' : 'none';
         if (nextBtn) nextBtn.style.display = currentImageIndex < galleryImages.length - 1 ? 'flex' : 'none';
     }
-    
+
     function loadImage(index) {
         if (!galleryImages || index < 0 || index >= galleryImages.length) return;
-        
+
         currentImageIndex = index;
         modalImage.style.opacity = '0';
         modalImage.style.transition = 'opacity 0.2s ease';
-        
+
         setTimeout(() => {
             modalImage.src = galleryImages[index];
             modalImage.alt = `Gallery image ${index + 1}`;
@@ -755,25 +756,25 @@ function createImageModal(src, alt, galleryImages = null, currentIndex = 0) {
             updateImageCounter();
             updateNavigationButtons();
             updateThumbnails();
-            
+
             modalImage.onload = () => {
                 modalImage.style.opacity = '1';
             };
         }, 200);
     }
-    
+
     function navigatePrevious() {
         if (currentImageIndex > 0) {
             loadImage(currentImageIndex - 1);
         }
     }
-    
+
     function navigateNext() {
         if (currentImageIndex < galleryImages.length - 1) {
             loadImage(currentImageIndex + 1);
         }
     }
-    
+
     function updateThumbnails() {
         const thumbnails = modalOverlay.querySelectorAll('.thumbnail-item');
         thumbnails.forEach((thumb, index) => {
@@ -813,29 +814,29 @@ function createImageModal(src, alt, galleryImages = null, currentIndex = 0) {
     }
 
     // Event handlers
-    const wheelHandler = function(event) {
+    const wheelHandler = function (event) {
         event.preventDefault();
         const rect = modalImage.getBoundingClientRect();
         const mouseX = event.clientX - rect.left - rect.width / 2;
         const mouseY = event.clientY - rect.top - rect.height / 2;
-        
+
         const oldScale = currentScale;
-        
+
         if (event.deltaY < 0) {
             currentScale = Math.min(maxScale, currentScale + scaleStep);
         } else {
             currentScale = Math.max(minScale, currentScale - scaleStep);
         }
-        
+
         // Adjust position to zoom towards mouse cursor
         const scaleRatio = currentScale / oldScale;
         translateX = translateX * scaleRatio + mouseX * (1 - scaleRatio);
         translateY = translateY * scaleRatio + mouseY * (1 - scaleRatio);
-        
+
         applyTransform();
     };
 
-    const imageMouseDownHandler = function(event) {
+    const imageMouseDownHandler = function (event) {
         if (currentScale <= 1.0) return;
         event.preventDefault();
         isPanning = true;
@@ -844,7 +845,7 @@ function createImageModal(src, alt, galleryImages = null, currentIndex = 0) {
         modalImage.style.cursor = 'grabbing';
     };
 
-    const documentMouseMoveHandler = function(event) {
+    const documentMouseMoveHandler = function (event) {
         if (!isPanning) return;
         event.preventDefault();
         translateX = event.clientX - startX;
@@ -852,7 +853,7 @@ function createImageModal(src, alt, galleryImages = null, currentIndex = 0) {
         applyTransform();
     };
 
-    const documentMouseUpHandler = function() {
+    const documentMouseUpHandler = function () {
         if (isPanning) {
             isPanning = false;
             modalImage.style.cursor = 'grab';
@@ -860,7 +861,7 @@ function createImageModal(src, alt, galleryImages = null, currentIndex = 0) {
     };
 
     // Cleanup function
-    const closeModalCleanup = function() {
+    const closeModalCleanup = function () {
         modalImage.removeEventListener('wheel', wheelHandler);
         modalImage.removeEventListener('mousedown', imageMouseDownHandler);
         modalImage.removeEventListener('touchstart', touchStartHandler);
@@ -874,8 +875,8 @@ function createImageModal(src, alt, galleryImages = null, currentIndex = 0) {
             modalOverlay.remove();
         }
     };    // Keyboard handler
-    const keyHandler = function(event) {
-        switch(event.key) {
+    const keyHandler = function (event) {
+        switch (event.key) {
             case 'Escape':
                 event.preventDefault();
                 closeModalCleanup();
@@ -955,23 +956,23 @@ function createImageModal(src, alt, galleryImages = null, currentIndex = 0) {
     resetZoomButton.onclick = resetZoom;
 
     // Touch event handlers for swipe gestures
-    const touchStartHandler = function(event) {
+    const touchStartHandler = function (event) {
         if (currentScale > 1.0 || !galleryImages || galleryImages.length <= 1) return;
         touchStartX = event.touches[0].clientX;
         touchStartY = event.touches[0].clientY;
     };
-    
-    const touchMoveHandler = function(event) {
+
+    const touchMoveHandler = function (event) {
         if (currentScale > 1.0 || !galleryImages || galleryImages.length <= 1) return;
         touchMoveX = event.touches[0].clientX;
     };
-    
-    const touchEndHandler = function(event) {
+
+    const touchEndHandler = function (event) {
         if (currentScale > 1.0 || !galleryImages || galleryImages.length <= 1) return;
-        
+
         const diffX = touchStartX - touchMoveX;
         const diffY = Math.abs(touchStartY - (event.changedTouches[0].clientY));
-        
+
         // Only trigger if horizontal swipe is dominant
         if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > diffY) {
             if (diffX > 0) {
@@ -993,7 +994,7 @@ function createImageModal(src, alt, galleryImages = null, currentIndex = 0) {
     document.addEventListener('keydown', keyHandler);
 
     // Close modal on overlay click
-    modalOverlay.onclick = function(event) {
+    modalOverlay.onclick = function (event) {
         if (event.target === modalOverlay) {
             closeModalCleanup();
         }
@@ -1006,35 +1007,35 @@ function createImageModal(src, alt, galleryImages = null, currentIndex = 0) {
         prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
         prevButton.title = 'Previous image (← arrow key)';
         prevButton.onclick = navigatePrevious;
-        
+
         const nextButton = document.createElement('button');
         nextButton.className = 'gallery-nav-next';
         nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
         nextButton.title = 'Next image (→ arrow key)';
         nextButton.onclick = navigateNext;
-        
+
         const imageCounter = document.createElement('div');
         imageCounter.className = 'image-counter';
         imageCounter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
-        
+
         // Create thumbnail strip
         const thumbnailStrip = document.createElement('div');
         thumbnailStrip.className = 'thumbnail-strip';
-        
+
         galleryImages.forEach((imgSrc, index) => {
             const thumbContainer = document.createElement('div');
             thumbContainer.className = 'thumbnail-item' + (index === currentImageIndex ? ' active' : '');
-            
+
             const thumb = document.createElement('img');
             thumb.src = imgSrc;
             thumb.alt = `Thumbnail ${index + 1}`;
             thumb.loading = 'lazy';
             thumb.onclick = () => loadImage(index);
-            
+
             thumbContainer.appendChild(thumb);
             thumbnailStrip.appendChild(thumbContainer);
         });
-        
+
         modalOverlay.appendChild(prevButton);
         modalOverlay.appendChild(nextButton);
         modalOverlay.appendChild(imageCounter);
@@ -1102,7 +1103,7 @@ function createProjectDetailModal(title, subtitle, description, imageSrcs, image
     // Create description element with Read More functionality
     const modalDescription = document.createElement('p');
     modalDescription.className = 'project-detail-modal-description';
-    
+
     // Convert URLs to clickable links and handle line breaks
     const fullDescriptionHtml = linkifyText(description.replace(/\n/g, '<br>'));
     const shortDescriptionLength = 200; // Max characters for the snippet
@@ -1113,21 +1114,21 @@ function createProjectDetailModal(title, subtitle, description, imageSrcs, image
         const lastSpace = snippet.lastIndexOf(' ');
         if (lastSpace > 0) {
             snippet = snippet.substring(0, lastSpace);
-        }        snippet += '...';
+        } snippet += '...';
         modalDescription.innerHTML = linkifyText(snippet.replace(/\n/g, '<br>'));
 
         const readMoreButton = document.createElement('button');
         readMoreButton.textContent = 'Read more';
         readMoreButton.className = 'read-more-button';
-        readMoreButton.onclick = function(e) {
+        readMoreButton.onclick = function (e) {
             e.preventDefault();
             modalDescription.innerHTML = fullDescriptionHtml;
-            
+
             // Create "Read less" button
             const readLessButton = document.createElement('button');
             readLessButton.textContent = 'Read less';
             readLessButton.className = 'read-less-button';
-            readLessButton.onclick = function() {
+            readLessButton.onclick = function () {
                 modalDescription.innerHTML = linkifyText(snippet.replace(/\n/g, '<br>'));
                 this.remove();
                 modalContent.insertBefore(readMoreButton, modalDescription.nextSibling);
@@ -1151,12 +1152,12 @@ function createProjectDetailModal(title, subtitle, description, imageSrcs, image
             modalImage.alt = `${imageBaseAlt} - image ${index + 1}`;
             modalImage.className = 'project-detail-modal-image';
             modalImage.loading = 'lazy';
-            modalImage.onerror = function() {
+            modalImage.onerror = function () {
                 console.error(`Failed to load project detail image: ${modalImage.src}`);
                 // Optionally display a placeholder or error message for this specific image
             };
             // Make each image in the modal clickable to open the image zoom modal
-            modalImage.addEventListener('click', function(event) {
+            modalImage.addEventListener('click', function (event) {
                 event.stopPropagation(); // Prevent modal from closing if image is part of content
                 const imgIndex = imageSrcs.indexOf(this.src);
                 createImageModal(this.src, this.alt, imageSrcs, imgIndex >= 0 ? imgIndex : index);
@@ -1165,18 +1166,18 @@ function createProjectDetailModal(title, subtitle, description, imageSrcs, image
         });
         modalContent.appendChild(imageContainer);
     }
-    
+
     // Create close button
     const closeButton = document.createElement('button');
     closeButton.className = 'project-detail-modal-close';
     closeButton.innerHTML = '&times;';
     closeButton.setAttribute('aria-label', 'Close modal');
-    closeButton.onclick = function() {
+    closeButton.onclick = function () {
         modalOverlay.remove();
     };
 
     // Close modal if overlay is clicked
-    modalOverlay.onclick = function(event) {
+    modalOverlay.onclick = function (event) {
         if (event.target === modalOverlay) {
             modalOverlay.remove();
         }
@@ -1188,7 +1189,7 @@ function createProjectDetailModal(title, subtitle, description, imageSrcs, image
     console.log('[createProjectDetailModal] Appending modalOverlay to body. ID:', modalOverlay.id, 'Class:', modalOverlay.className);
     document.body.appendChild(modalOverlay);
     console.log('[createProjectDetailModal] ModalOverlay parent after append:', modalOverlay.parentNode ? modalOverlay.parentNode.tagName : 'null');
-     if (modalOverlay.parentNode !== document.body) {
+    if (modalOverlay.parentNode !== document.body) {
         console.error("[createProjectDetailModal] Modal overlay was NOT successfully appended to document.body!");
     }
     console.log('[createProjectDetailModal] Computed style before active - display:', window.getComputedStyle(modalOverlay).display, 'opacity:', window.getComputedStyle(modalOverlay).opacity);
@@ -1246,11 +1247,11 @@ function createFullGalleryModal() {
     modalBody.appendChild(loadingIndicator);
 
     let allImageSourcesForModal = [];
-    
+
     fetchText('assets/texts/gallery.txt').then(text => {
         loadingIndicator.remove();
         const imageFilenames = text.split(/\r?\n/).map(name => name.trim()).filter(name => name !== '' && !name.startsWith('#'));
-        
+
         // Build array of all image sources for modal
         allImageSourcesForModal = imageFilenames.map(filename => `assets/images/${filename}`);
 
@@ -1270,12 +1271,12 @@ function createFullGalleryModal() {
             img.alt = `Gallery image ${index + 1} - ${filename}`;
             img.className = 'portfolio-image gallery-image';
             img.loading = 'lazy';
-            img.onerror = function() {
+            img.onerror = function () {
                 console.error(`Failed to load gallery image in full modal: ${img.src}.`);
                 imgContainer.innerHTML = `<p class="gallery-image-error">Error loading ${filename}</p>`;
             };
 
-            img.addEventListener('click', function() {
+            img.addEventListener('click', function () {
                 createImageModal(this.src, this.alt, allImageSourcesForModal, index); // Pass gallery context
             });
 
@@ -1296,7 +1297,7 @@ function createFullGalleryModal() {
     modalOverlay.appendChild(modalDialog);
 
     // Close modal if overlay backdrop is clicked
-    modalOverlay.addEventListener('click', function(event) {
+    modalOverlay.addEventListener('click', function (event) {
         if (event.target === modalOverlay) {
             modalOverlay.remove();
         }
